@@ -1,0 +1,16 @@
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using MyTodoApp.Models;
+
+namespace MyTodoApp.Data;
+
+public class ApplicationDbContext : IdentityDbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) //representação do banco de dados
+        : base(options)
+    {
+    }
+
+    public DbSet <Todo> Todos { get; set; }//representação da nossa tabela
+
+}
